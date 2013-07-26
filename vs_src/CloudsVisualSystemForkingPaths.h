@@ -66,8 +66,7 @@ public:
     void selfSetupRenderGui();
     void guiRenderEvent(ofxUIEventArgs &e);
 	
-protected:
-	
+  protected:	
 	void addPath();
 	bool forkPath(ForkingPath& path, vector<ForkingPath>& paths);
 	void generateTracks();
