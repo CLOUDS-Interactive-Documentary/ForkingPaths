@@ -69,6 +69,7 @@ public:
   protected:	
 	void addPath();
 	bool forkPath(ForkingPath& path, vector<ForkingPath>& paths);
+
 	void generateTracks();
 	
 	vector<float> tracks;
