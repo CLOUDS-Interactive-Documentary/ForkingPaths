@@ -7,22 +7,28 @@
 class ForkingPath {
   public:
 	ForkingPath(){
-		merged = false;
+		merging = false;
 		foundTrack = false;
+		merged = false;
+		targeted = false;
 		backset = 0;
 		trackIndex = 0;
 		track.setMode(OF_PRIMITIVE_LINE_STRIP);
-
+		speed = 1 + ofRandom(-.2, .2);
 	}
 	ofVec2f forkPosition;
 	ofVec2f mergePosition;
 	ofVec2f currentPos;
 	ofVec2f currentDirection;
 	
+	float speed;
 	float backset;
 	float targetTrackHeight;
 	bool foundTrack;
+	bool merging;
 	bool merged;
+	bool targeted;
+	
 	int trackIndex;
 	
 	ofMesh track;
@@ -69,7 +75,8 @@ public:
   protected:	
 	void addPath();
 	bool forkPath(ForkingPath& path, vector<ForkingPath>& paths);
-
+	void mergePath(int inedex, vector<ForkingPath>& paths);
+	
 	void generateTracks();
 	
 	vector<float> tracks;
